@@ -1,0 +1,24 @@
+# This is to show hidden files in Finder.
+alias showAllFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
+# This disables the above.
+alias hideAllFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
+# This re-enables dashboard.
+alias showDashboard="defaults write com.apple.dashboard mcx-disabled -boolean NO && killall Dock"
+# This disables dashboard.
+alias hideDashboard="defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock"
+
+# To show dot files.
+alias lshid="ls -ld .?*"
+# To show all files only.
+alias lsfiles="ls -p | grep -v /"
+
+# Remove python files.
+alias pyclean="find . | grep -E '(__pycache__|\.pyc|\.pyo$)' | xargs rm -rf"
+# I only use python3.
+alias python="python3"
+alias pip="pip3"
+# This makes use of venv as a single command.
+alias venv="python -m venv"
+
+# Replace vim with Macvim
+alias vim="mvim -v"
