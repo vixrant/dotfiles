@@ -68,9 +68,6 @@ export CLICOLOR_FORCE=true
 # OTHER SETTINGS #
 ##################
 
-autoload predict-on
-predict-on
-
 # Those pesky .DS_Store files
 function ll { ls -la $@ | grep -v .DS_Store; }
 
