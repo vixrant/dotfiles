@@ -14,11 +14,8 @@ alias lsfiles="ls -p | grep -v /"
 
 # Remove python files.
 alias pyclean="find . | grep -E '(__pycache__|\.pyc|\.pyo$)' | xargs rm -rf"
-# I only use python3.
-alias python="python3"
-alias pip="pip3"
 # This makes use of venv as a single command.
 alias venv="python -m venv"
 
-# Replace vim with Macvim
-alias vim="mvim -v"
+# Weather
+alias wttr="curl wttr.in"
