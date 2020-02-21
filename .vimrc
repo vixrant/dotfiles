@@ -89,4 +89,3 @@ nnoremap k gk
 
 " Highlight last inserted text
 nnoremap gV `[v`]
-

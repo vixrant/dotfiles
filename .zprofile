@@ -51,19 +51,31 @@ export PATH="$PATH:$GOPATH/bin"
 ##########
 
 # Python autocomplete.
-export PYTHONSTARTUP=~/.pythonrc
+# export PYTHONSTARTUP=~/.pythonrc
 
 # Readline
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
-export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+# export LDFLAGS="-L/usr/local/opt/readline/lib"
+# export CPPFLAGS="-I/usr/local/opt/readline/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 #######
 # ZSH #
 #######
-
-# Hasura CLI
-export PATH="$PATH:/Users/vikrantgajria/.hasura"
 
 # Colour outputs!
 export CLICOLOR=true
@@ -72,9 +84,6 @@ export CLICOLOR_FORCE=true
 ##################
 # OTHER SETTINGS #
 ##################
-
-# Homebrew
-export PATH="/usr/local/sbin:$PATH"
 
 # Autocomplete
 autoload -U compinit && compinit
