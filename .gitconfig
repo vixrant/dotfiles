@@ -1,9 +1,10 @@
 [user]
     name = Vikrant Gajria
     email = vikrantgajria@gmail.com
+	signingkey = D700DE80AAE5B53C
 [core]
     excludesfile = /Users/vikrant/.gitignore
 [commit]
-	gpgsign = true
+	gpgsign = false 
 [gpg]
-	program = gpg
+	program = gpg2

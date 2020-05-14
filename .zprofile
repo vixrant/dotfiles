@@ -43,7 +43,7 @@ nvm() {
 ##########
 
 # Golang home
-export GOPATH=~/proj/golang
+export GOPATH=~/proj/go
 export PATH="$PATH:$GOPATH/bin"
 
 ##########
@@ -72,6 +72,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+########
+# JAVA #
+########
+
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 #######
 # ZSH #
