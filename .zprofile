@@ -44,6 +44,7 @@ nvm() {
 
 # Golang home
 export GOPATH=~/proj/go
+export GO111MODULE=on
 export PATH="$PATH:$GOPATH/bin"
 
 ##########
@@ -78,6 +79,12 @@ unset __conda_setup
 ########
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+#########
+# OCAML #
+#########
+
+test -r /Users/vikrantgajria/.opam/opam-init/init.zsh && . /Users/vikrantgajria/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 #######
 # ZSH #
