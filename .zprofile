@@ -54,11 +54,6 @@ export PATH="$PATH:$GOPATH/bin"
 # Python autocomplete.
 # export PYTHONSTARTUP=~/.pythonrc
 
-# Readline
-# export LDFLAGS="-L/usr/local/opt/readline/lib"
-# export CPPFLAGS="-I/usr/local/opt/readline/include"
-# export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -80,11 +75,11 @@ unset __conda_setup
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
-#########
-# OCAML #
-#########
+#######
+# CPP #
+#######
 
-test -r /Users/vikrantgajria/.opam/opam-init/init.zsh && . /Users/vikrantgajria/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
 #######
 # ZSH #

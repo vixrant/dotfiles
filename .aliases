@@ -7,8 +7,6 @@ alias showDashboard="defaults write com.apple.dashboard mcx-disabled -boolean NO
 # This disables dashboard.
 alias hideDashboard="defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock"
 
-# To show dot files.
-alias lshid="ls -ld .?*"
 # To show all files only.
 alias lsfiles="ls -p | grep -v /"
 
@@ -17,5 +15,3 @@ alias pyclean="find . | grep -E '(__pycache__|\.pyc|\.pyo$)' | xargs rm -rf"
 # This makes use of venv as a single command.
 alias venv="python -m venv"
 
-# Weather
-alias wttr="curl wttr.in"
