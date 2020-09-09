@@ -81,13 +81,11 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
-#######
-# ZSH #
-#######
+###########
+# HASKELL #
+###########
 
-# Colour outputs!
-export CLICOLOR=true
-export CLICOLOR_FORCE=true
+export PATH="~/.local/bin:$PATH"
 
 ##################
 # OTHER SETTINGS #
