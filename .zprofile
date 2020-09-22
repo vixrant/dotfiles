@@ -51,19 +51,46 @@ export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 # HASKELL #
 ###########
 
-export PATH="~/.local/bin:$PATH"
+export PATH="/Users/vikrant/.local/bin:$PATH"
 
-########
-# EMACS#
-########
-function emacs()
+if [ ! -f ~/.local/bin/ghci ]; then
+    echo '#!/bin/bash' > ~/.local/bin/ghci;
+    echo 'stack exec -- ghci $@' >> ~/.local/bin/ghci;
+    chmod +x ~/.local/bin/ghci;
+    echo "~/.local/bin/ghci created."
+fi
+
+if [ ! -f ~/.local/bin/ghc ]; then
+    echo '#!/bin/bash' > ~/.local/bin/ghc;
+    echo 'stack exec -- ghc $@' >> ~/.local/bin/ghc;
+    chmod +x ~/.local/bin/ghc;
+    echo "~/.local/bin/ghc created."
+fi
+
+if [ ! -f ~/.local/bin/runghc ]; then
+    echo '#!/bin/bash' > ~/.local/bin/runghc;
+    echo 'stack exec -- runghc $@' >> ~/.local/bin/runghc;
+    chmod +x ~/.local/bin/runghc;
+    echo "~/.local/bin/runghc created."
+fi
+
+#########
+# EMACS #
+#########
+function eccc()
 {
   # -c creates a new frame
   # -a= fires a new emacs server if none is running
-  emacsclient -c -a= $*
+  emacsclient -a= $*
 }
 
-export EDITOR="emacs"
+export EDITOR="emacsclient"
+
+########
+# LLVM #
+########
+
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 ##################
 # OTHER SETTINGS #
