@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Vikrant Gajria"
+      user-mail-address "vikrantgajria@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-acario-dark)
+(setq doom-theme 'doom-henna)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -56,3 +56,15 @@
 ;; Executes shell profile so that the PATH is the same
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
+
+
+;; Inserts semicolon at end of line
+(defun bb-semicolon ()
+  (interactive)
+  (end-of-line)
+  (insert ";"))
+
+(define-key evil-normal-state-map (kbd ";") 'bb-semicolon)
+
+;; Suppress warnings of package cl deprecated
+(setq byte-compile-warnings '(cl-functions))

@@ -38,11 +38,6 @@ set foldmethod=indent
 set foldlevel=99
 " Code folding with space bar
 nnoremap <space> za
-" Docstring for folded text
-let g:SimpylFold_docstring_preview=1
-
-" Python YCM
-let g:ycm_python_binary_path = '/usr/bin/python'
 
 " -----------
 " OS SETTINGS

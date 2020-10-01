@@ -86,6 +86,8 @@ function eccc()
 
 export EDITOR="emacsclient"
 
+export PATH="/Users/vikrant/.emacs.d/bin:$PATH"
+
 ########
 # LLVM #
 ########
