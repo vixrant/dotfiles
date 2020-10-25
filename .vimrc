@@ -1,11 +1,60 @@
 " ---------------------
+" PLUGIN LIST
+" ---------------------
+
+call plug#begin('~/.vim/plugged')
+
+" Plug 'w0rp/ale'
+" Plug 'scrooloose/syntastic'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'flazz/vim-colorschemes'
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mg979/vim-visual-multi'
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'lervag/vimtex'
+
+call plug#end()
+
+" ---------------------
+"  Colorscheme
+" ---------------------
+
+" Fix italics in Vim
+if !has('nvim')
+  let &t_ZH="\e[3m"
+  let &t_ZR="\e[23m"
+endif
+
+set term=xterm
+set t_Co=256
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
+" Colorscheme!
+colorscheme twilight 
+
+" Font
+set guifont=Fire_Code_Mono:h12
+
+" ---------------------
 " GENERAL
 " --------------------
 
 " Syntax!
 syntax enable
-" Colorscheme!
-colorscheme elflord
+" For unicode
+set encoding=UTF-8
 
 " Numbers
 set number
@@ -36,6 +85,7 @@ set splitright
 " Code folding
 set foldmethod=indent
 set foldlevel=99
+
 " Code folding with space bar
 nnoremap <space> za
 
@@ -45,6 +95,7 @@ nnoremap <space> za
 
 " Use OS clipboard!
 set clipboard=unnamed
+
 " Fast terminal connections
 set ttyfast
 
@@ -54,6 +105,7 @@ set ttyfast
 
 " Number of visual spaces per TAB
 set tabstop=4
+
 " Number of spaces in TAB when editing
 set softtabstop=4
 
@@ -65,6 +117,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Instant search as you type
 set incsearch
+
 " Highlight matches
 set hlsearch
 
@@ -73,6 +126,7 @@ set hlsearch
 " ---------------------
 
 " Enable mouse in all modes
+set nowrap
 set mouse=a
 
 " Allow backspace in insert mode.
@@ -84,4 +138,24 @@ nnoremap k gk
 
 " Highlight last inserted text
 nnoremap gV `[v`]
+
+" ---------------------
+" PLUGIN CONFIG 
+" ---------------------
+
+" Setting vimtex flavor
+let g:tex_flavor = 'latex'
+
+" Ignore files in gitignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Tab as coc completion
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 

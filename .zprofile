@@ -74,20 +74,6 @@ if [ ! -f ~/.local/bin/runghc ]; then
     echo "~/.local/bin/runghc created."
 fi
 
-#########
-# EMACS #
-#########
-function eccc()
-{
-  # -c creates a new frame
-  # -a= fires a new emacs server if none is running
-  emacsclient -a= $*
-}
-
-export EDITOR="emacsclient"
-
-export PATH="/Users/vikrant/.emacs.d/bin:$PATH"
-
 ########
 # LLVM #
 ########
