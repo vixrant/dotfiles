@@ -1,6 +1,12 @@
 # To show all files only.
 alias lsfiles="ls -p | grep -v /"
 
+# ---
+# Vim
+# ---
+
+alias vim="mvim -v"
+
 # ------
 # Python
 # ------
