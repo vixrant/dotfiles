@@ -38,6 +38,7 @@ endif
 
 set term=xterm
 set t_Co=256
+set termguicolors
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
@@ -45,8 +46,8 @@ let &t_AF="\e[38;5;%dm"
 colorscheme twilight 
 
 " Font
-set guifont=Fire_Code_Mono:h12
-
+set macligatures
+set guifont=Fira\ Code:h12
 " ---------------------
 " GENERAL
 " --------------------
