@@ -51,7 +51,11 @@ export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 # HASKELL #
 ###########
 
+# Add ghc from stack to path
 export PATH="/Users/vikrant/.local/bin:$PATH"
+
+# Add haskell language server to path
+export PATH="/Users/vikrant/.hls/:$PATH"
 
 if [ ! -f ~/.local/bin/ghci ]; then
     echo '#!/bin/bash' > ~/.local/bin/ghci;

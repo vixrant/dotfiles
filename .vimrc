@@ -4,8 +4,6 @@
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'w0rp/ale'
-" Plug 'scrooloose/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'tpope/vim-surround'
@@ -19,6 +17,7 @@ Plug 'flazz/vim-colorschemes'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'preservim/nerdcommenter'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -43,11 +42,12 @@ let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
 " Colorscheme!
-colorscheme twilight 
+colorscheme distinguished
 
 " Font
 set macligatures
-set guifont=Fira\ Code:h12
+set guifont=FiraCode-Retina:h12
+
 " ---------------------
 " GENERAL
 " --------------------
@@ -144,11 +144,20 @@ nnoremap gV `[v`]
 " PLUGIN CONFIG 
 " ---------------------
 
+" ------
+" VIMTEX 
+
 " Setting vimtex flavor
 let g:tex_flavor = 'latex'
 
+" -----
+" CTRLP
+
 " Ignore files in gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" ---
+" COC
 
 " Tab as coc completion
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -159,4 +168,11 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+" --------------
+" NERD COMMENTER
+
+" D-/ as nerd commenter toggle
+nmap <D-/>   <Plug>NERDCommenterToggle
+vmap <D-/>   <Plug>NERDCommenterToggle<CR>gv
+imap <D-/>   <ESC><Plug>NERDCommenterToggle
 
