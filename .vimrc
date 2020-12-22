@@ -13,7 +13,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
+
 Plug 'flazz/vim-colorschemes'
+Plug 'ParamagicDev/vim-medic_chalk'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mg979/vim-visual-multi'
@@ -30,10 +32,8 @@ call plug#end()
 " ---------------------
 
 " Fix italics in Vim
-if !has('nvim')
-  let &t_ZH="\e[3m"
-  let &t_ZR="\e[23m"
-endif
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
 
 set term=xterm
 set t_Co=256
@@ -42,7 +42,11 @@ let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
 " Colorscheme!
-colorscheme distinguished
+if !has("gui_running")
+    colorscheme pride
+else
+    colorscheme medic_chalk
+endif
 
 " Font
 set macligatures

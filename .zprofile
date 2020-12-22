@@ -35,6 +35,23 @@ export PATH="$PATH:$GOPATH/bin"
 # Python autocomplete.
 # export PYTHONSTARTUP=~/.pythonrc
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
 ########
 # JAVA #
 ########
@@ -77,12 +94,6 @@ if [ ! -f ~/.local/bin/runghc ]; then
     chmod +x ~/.local/bin/runghc;
     echo "~/.local/bin/runghc created."
 fi
-
-########
-# LLVM #
-########
-
-export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 ##################
 # OTHER SETTINGS #

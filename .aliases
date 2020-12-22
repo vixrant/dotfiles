@@ -17,10 +17,6 @@ alias pyclean="find . | grep -E '(__pycache__|\.pyc|\.pyo$)' | xargs rm -rf"
 # This makes use of venv as a single command.
 alias venv="python3 -m venv"
 
-# Use python3 as default
-alias python="python3"
-alias pip="pip3"
-
 # ------
 # C/ C++ 
 # ------
